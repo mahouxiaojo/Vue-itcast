@@ -2,8 +2,14 @@
     <div>登录成功</div>
 </template>
 <script>
+    import {getUser} from "@/api"
     export default {
-
+        mounted () {
+            let params = {params:{query:"", pagenum:1, pagesize: 1}}
+            getUser(params).then(res=>{
+                console.log(res);
+            })
+        }
     }
 </script>
 <style>

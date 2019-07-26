@@ -45,9 +45,12 @@
                         // console.log(this.formLabelAlign);
                         // 把data中 用户输入的数据 发送给后台
                         checkUser(this.formLabelAlign).then(res=>{
-                            // console.log(res)
+                            console.log(res)
                             // 如果成功跳转到首页
                             if(res.meta.status == 200){
+                                // 如果成功跳转到首页，将token保存到localStorage中
+                                localStorage.setItem("mytoken",res.data.token);
+                                
                                 // 提示登录成功，这里引用的是element中的组件提示
                                 this.$message({
                                     message: '登录成功',
